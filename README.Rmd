@@ -178,7 +178,7 @@ ggplot() +
 
 # Italian provinces
 
-```{r, results="hold", message=F, error=F}
+```{r}
 prov_long.df <- data.frame(stringsAsFactors = F)
 
 for (prov in prov_ita.sf$SIGLA) {
