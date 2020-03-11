@@ -19,22 +19,26 @@ library(sf)
 load("prov_ita_simp.sf.RData")
 
 # Define UI for application that draws a histogram
-ui <- bootstrapPage(
-    
-    tags$style(type = "text/css", "html, body {width:100%;height:100%}"),
+ui <- fluidPage(
     
     # Application title
     titlePanel(sprintf("Covid-19 | Aggiornato/Updated: %s", max(prov_long.df$date[!is.na(prov_long.df$totale_casi)]))),
     
-    leafletOutput("provMap", width = "100%", height = "100%"),
-    
-    absolutePanel(bottom = 5, left = 10,
-                  selectizeInput("prov",
-                                 "Provincia/Province",
-                                 provinces),
-                  plotOutput("provPlot", height = 300, width = 500),
-                  HTML("Day zero is estimated by prediction based on regression results. They are manually set for the provinces of Lodi and Cremona."),
-                  HTML("<p><a href='http://github.com/fraba/coronavirus-ita'>Replication/Data</a> | Hosted by <a href='https://nectar.org.au/'>nectar.org.au</a>, designed by <a href='https://www.uts.edu.au/staff/francesco.bailo'>me</a></p>")
+    # Sidebar with a slider input for number of bins 
+    sidebarLayout(
+        sidebarPanel(
+            selectizeInput("prov",
+                           "Provincia/Province",
+                           provinces)
+        ),
+        
+        
+        mainPanel(
+            plotOutput("provPlot", height = 300),
+            HTML("Day zero is estimated by prediction based on regression results. They are manually set for the provinces of Lodi and Cremona."),
+            leafletOutput("provMap"),
+            HTML("<p><a href='http://github.com/fraba/coronavirus-ita'>Replication/Data</a> | Hosted by <a href='https://nectar.org.au/'>nectar.org.au</a>, designed by <a href='https://www.uts.edu.au/staff/francesco.bailo'>me</a></p>")
+        )
     )
 )
 
@@ -90,7 +94,7 @@ server <- function(input, output, session) {
                         popupOptions = popupOptions(maxWidth ="100%", closeOnClick = TRUE)
             ) %>%
             setView(lng = 10.4, lat = 45.3, zoom = 6) %>%
-            addLegend(position = "topright",
+            addLegend(position = "bottomleft",
                       pal = pal, values = quantile(prov_ita_simp.sf$perc,
                                                    probs = cuts),
                       labFormat = function(type, cuts, p) {
@@ -107,10 +111,10 @@ server <- function(input, output, session) {
         leafletProxy("provMap", session) %>% removeShape("highlighted_polygon")
         
         leafletProxy("provMap", session) %>% 
-            setView(lng = long(), lat = lat() - 1.5, zoom = 7) %>%
+            setView(lng = long(), lat = lat(), zoom = 7) %>%
             addPolylines(data = selected_polygon, stroke=TRUE, weight = 4, color="red", 
                          layerId="highlighted_polygon")
-        
+            
     })
     
 }
