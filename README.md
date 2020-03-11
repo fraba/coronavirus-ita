@@ -146,7 +146,7 @@ prov_ita.sf$long <-
   prov_ita.last_data$long[match(prov_ita.sf$SIGLA, 
                                   prov_ita.last_data$sigla_provincia)]
 
-prov_ita.sf$perc <- prov_ita.sf$totale_casi / prov_ita_simp.sf$pop_2019 * 10000
+prov_ita.sf$perc <- prov_ita.sf$totale_casi / prov_ita.sf$pop_2019 * 10000
 
 require(rmapshaper)
 prov_ita_simp.sf <- 
