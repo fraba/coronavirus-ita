@@ -68,9 +68,9 @@ server <- function(input, output, session) {
             geom_point(aes(y=perc, colour = "black")) +
             geom_line(aes(y=perc, colour = "black")) +
             geom_line(aes(y=wuhan_curve, colour = "blue")) +
-            labs(title = sprintf("Casi COVID-19 Cases: Provincia di %s | Giorno/Day 0 (est.): %s", input$prov, dayzero()), 
+            labs(title = sprintf("Casi COVID-19 Cases: Provincia di %s\nGiorno/Day 0 (est.): %s", input$prov, dayzero()), 
                  x=NULL, y="per/every 10,000 abitanti/people", colour = NULL,
-                 caption = sprintf("Data: Province of %s => github.com/pcm-dpc/COVID-19 | City of Wuhan => bit.ly/39rGZPr", input$prov)) +
+                 caption = sprintf("Data: Province of %s => github.com/pcm-dpc/COVID-19\nCity of Wuhan => bit.ly/39rGZPr", input$prov)) +
             scale_color_manual(values = c("black", "blue"), labels = c(paste0(input$prov, " (observed)" ), "Wuhan (regr.)")) +
             theme_bw() + theme(legend.position = c(.8, .3))
     })
