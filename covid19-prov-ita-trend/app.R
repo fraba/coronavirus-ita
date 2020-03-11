@@ -36,7 +36,8 @@ ui <- fluidPage(
         mainPanel(
             plotOutput("provPlot", height = 300),
             HTML("Day zero is estimated by prediction based on regression results. They are manually set for the provinces of Lodi and Cremona."),
-            leafletOutput("provMap")
+            leafletOutput("provMap"),
+            HTML("<p><a href='http://github.com/fraba/coronavirus-ita'>Replication/Data</a> | Hosted by <a href='https://nectar.org.au/'>nectar.org.au</a>, designed by <a href='https://www.uts.edu.au/staff/francesco.bailo'>me</a></p>")
         )
     )
 )
