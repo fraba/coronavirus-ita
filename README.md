@@ -37,19 +37,19 @@ library(mgcv)
     ## 
     ##     collapse
 
-    ## This is mgcv 1.8-28. For overview type 'help("mgcv-package")'.
+    ## This is mgcv 1.8-26. For overview type 'help("mgcv-package")'.
 
 ``` r
 library(plyr)
 ```
 
-    ## ------------------------------------------------------------------------------
+    ## -------------------------------------------------------------------------
 
     ## You have loaded plyr after dplyr - this is likely to cause problems.
     ## If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
     ## library(plyr); library(dplyr)
 
-    ## ------------------------------------------------------------------------------
+    ## -------------------------------------------------------------------------
 
     ## 
     ## Attaching package: 'plyr'
@@ -193,7 +193,7 @@ wuhan_origin <-
 wuhan_origin
 ```
 
-    ## [1] "2020-01-18"
+    ## [1] "2020-01-10"
 
 ## Fit
 
@@ -287,105 +287,6 @@ for (prov in prov_ita.sf$SIGLA) {
   
 }
 ```
-
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in mgcv::gam(formula = y ~ s(x, bs = "cs"), data = dat, method = "REML") : 
-    ##   Not enough (non-NA) data to do anything meaningful
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in mgcv::gam(formula = y ~ s(x, bs = "cs"), data = dat, method = "REML") : 
-    ##   Not enough (non-NA) data to do anything meaningful
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in mgcv::gam(formula = y ~ s(x, bs = "cs"), data = dat, method = "REML") : 
-    ##   Not enough (non-NA) data to do anything meaningful
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
-    ## Error in smooth.construct.cr.smooth.spec(object, data, knots) : 
-    ##   x has insufficient unique values to support 10 knots: reduce k.
 
 ``` r
 save(prov_long.df, file = "prov_wt_fit.RData")
