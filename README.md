@@ -149,6 +149,15 @@ prov_ita.sf$long <-
 prov_ita.sf$perc <- prov_ita.sf$totale_casi / prov_ita.sf$pop_2019 * 10000
 
 require(rmapshaper)
+```
+
+    ## Loading required package: rmapshaper
+
+    ## Registered S3 method overwritten by 'geojsonlint':
+    ##   method         from 
+    ##   print.location dplyr
+
+``` r
 prov_ita_simp.sf <- 
   rmapshaper::ms_simplify(input = as(prov_ita.sf, 'Spatial'), keep = 0.05) %>%
   st_as_sf() %>%
@@ -156,9 +165,18 @@ prov_ita_simp.sf <-
 
 start_time <- Sys.time()
 ggplot(prov_ita_simp.sf) + geom_sf()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+``` r
 end_time <- Sys.time()
 end_time - start_time
+```
 
+    ## Time difference of 0.8626289 secs
+
+``` r
 save(prov_ita_simp.sf, file = "prov_ita_simp.sf.RData")
 ```
 
@@ -246,13 +264,13 @@ for (prov in prov_ita.sf$SIGLA) {
     getGamOrigin(this_dat)
   })
   
-  # Manual correction
-  if (prov == "LO") {
-    this_origin <- as.Date("2020-02-09")
-  }
-  if (prov == "CR") {
-    this_origin <- as.Date("2020-02-14")
-  }
+  # # Manual correction
+  # if (prov == "LO") {
+  #   this_origin <- as.Date("2020-02-09")
+  # }
+  # if (prov == "CR") {
+  #   this_origin <- as.Date("2020-02-14")
+  # }
   
   if(class(this_origin) == "try-error") {
     next

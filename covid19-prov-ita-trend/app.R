@@ -8,7 +8,7 @@
 #
 
 # Load
-setwd("/Users/143852/public_git/coronavirus-ita")
+setwd("/Users/francesco/public_git/coronavirus-ita/git")
 load("prov_wt_fit.RData")
 provinces <- unique(prov_long.df$denominazione_provincia[order(prov_long.df$perc, decreasing = T)])
 

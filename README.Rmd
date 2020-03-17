@@ -17,7 +17,7 @@ theme_set(theme_bw())
 ```
 
 
-```{r load, cache=TRUE}
+```{r load, cache=FALSE}
 prov_ita.data <- 
   read.csv('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv',
            stringsAsFactors = F)
@@ -77,7 +77,7 @@ dat_wuhan <-
                    perc = totale_casi / wuhan_pop * 10000)
 ```
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 
 prov_ita.last_data <- 
   prov_ita.data %>%
@@ -196,13 +196,13 @@ for (prov in prov_ita.sf$SIGLA) {
     getGamOrigin(this_dat)
   })
   
-  # Manual correction
-  if (prov == "LO") {
-    this_origin <- as.Date("2020-02-09")
-  }
-  if (prov == "CR") {
-    this_origin <- as.Date("2020-02-14")
-  }
+  # # Manual correction
+  # if (prov == "LO") {
+  #   this_origin <- as.Date("2020-02-09")
+  # }
+  # if (prov == "CR") {
+  #   this_origin <- as.Date("2020-02-14")
+  # }
   
   if(class(this_origin) == "try-error") {
     next
