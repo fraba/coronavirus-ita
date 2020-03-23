@@ -174,7 +174,7 @@ end_time <- Sys.time()
 end_time - start_time
 ```
 
-    ## Time difference of 0.8626289 secs
+    ## Time difference of 1.595925 secs
 
 ``` r
 save(prov_ita_simp.sf, file = "prov_ita_simp.sf.RData")
@@ -264,13 +264,13 @@ for (prov in prov_ita.sf$SIGLA) {
     getGamOrigin(this_dat)
   })
   
-  # # Manual correction
-  # if (prov == "LO") {
-  #   this_origin <- as.Date("2020-02-09")
-  # }
-  # if (prov == "CR") {
-  #   this_origin <- as.Date("2020-02-14")
-  # }
+  # Manual correction
+  if (prov == "LO") {
+    this_origin <- as.Date("2020-02-09")
+  }
+  if (prov == "CR") {
+    this_origin <- as.Date("2020-02-14")
+  }
   
   if(class(this_origin) == "try-error") {
     next
@@ -309,3 +309,5 @@ for (prov in prov_ita.sf$SIGLA) {
 ``` r
 save(prov_long.df, file = "prov_wt_fit.RData")
 ```
+
+#
