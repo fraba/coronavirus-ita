@@ -174,7 +174,7 @@ end_time <- Sys.time()
 end_time - start_time
 ```
 
-    ## Time difference of 1.595925 secs
+    ## Time difference of 1.071559 secs
 
 ``` r
 save(prov_ita_simp.sf, file = "prov_ita_simp.sf.RData")
